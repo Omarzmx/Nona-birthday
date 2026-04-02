@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Nona 💖</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to top, #ffe6f0, #fff);
+    overflow: hidden;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 3em;
+    color: #ff4da6;
+}
+
+p {
+    font-size: 1.3em;
+    color: #555;
+}
+
+.flower {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff80bf;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Happy Birthday Nona 🌸</h1>
+<p>You make everything brighter just by being you 💖</p>
+
+<button onclick="showMessage()">Click me 🎁</button>
+
+<p id="surprise" class="hidden">
+I hope your day is full of happiness, flowers, and everything you love 🌷✨
+</p>
+
+<script>
+function showMessage() {
+    document.getElementById("surprise").classList.remove("hidden");
+}
+
+// create falling flowers
+for (let i = 0; i < 25; i++) {
+    let flower = document.createElement("div");
+    flower.className = "flower";
+    flower.innerHTML = "🌸";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(flower);
+}
+</script>
+
+</body>
+</html>
